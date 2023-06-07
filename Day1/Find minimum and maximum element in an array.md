@@ -10,5 +10,24 @@ pair<long long, long long> getMinMax(long long a[], int n) {
     
 }
 ```
-- TC: O(nlogn)\
+- TC: O(nlogn)
 - SC: O(1)
+
+Optimized code
+
+``` cpp
+#include <bits/stdc++.h> 
+int sumOfMaxMin(int arr[], int n){
+	int small = arr[0];
+	int large = arr[0];
+	for(int i=1;i<n;i++)
+	{
+		if(arr[i]>large)
+		large = arr[i];
+		if(arr[i]<small)
+		small = arr[i];
+	}
+	return large+small;
+}
+```
+TC: O(N)
